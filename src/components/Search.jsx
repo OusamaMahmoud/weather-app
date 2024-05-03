@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "../api";
+import WeatherContext from "../context/weatherContext";
 
-const Search = ({ onSearchChange }) => {
-  const [search, setSearch] = useState(null);
+const Search = () => {
+  const { search, setSearch } = useContext(WeatherContext);
 
   const loadOptions = (inputValue) => {
     return fetch(
@@ -27,11 +28,11 @@ const Search = ({ onSearchChange }) => {
 
   const handleOnChange = (searchData) => {
     setSearch(searchData);
-    onSearchChange(searchData);
   };
 
   return (
     <AsyncPaginate
+      className="font-pop"
       placeholder="Search Location"
       debounceTimeout={600}
       value={search}
