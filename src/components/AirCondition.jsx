@@ -28,7 +28,6 @@ const AirCondition = ({ data }) => {
 
   };
 
-  // Calculate the index of the current day
   const todayIndex = new Date().getDay();
 
   return (
@@ -39,7 +38,6 @@ const AirCondition = ({ data }) => {
         </button>
         {data &&
           data.list &&
-          // Use todayIndex to ensure the current day is displayed in the middle
           data.list
             .slice(startIndex + todayIndex, startIndex + todayIndex + 5)
             .map((item, idx) => {
@@ -51,10 +49,11 @@ const AirCondition = ({ data }) => {
               const month = currentDate.toLocaleString("default", {
                 month: "short",
               });
+
               const dayOfMonth = currentDate.getDate();
               const formattedDate = `${month} ${dayOfMonth}`;
-              // Determine if it's today
-              const isToday = idx === 2; // The middle day
+
+              const isToday = idx === 2;
               return (
                 <div key={idx}>
                   <div className="flex flex-col justify-center items-center">
@@ -116,7 +115,6 @@ const AirCondition = ({ data }) => {
             </span>
             <div className="font-int text-[12px] font-medium">
               <p className="font-int text-[12px] font-medium">
-                {" "}
                 Chance Of Rain
               </p>
               <p className="text-[16px] font-int font-bold ">

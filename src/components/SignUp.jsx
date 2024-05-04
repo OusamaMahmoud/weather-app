@@ -3,7 +3,8 @@ import axios from "axios";
 import { TiArrowSortedDown } from "react-icons/ti";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"; // Import eye icons from React Icons
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+
 import WeatherContext from "../context/weatherContext";
 const SignUpForm = () => {
   const { setUserData } = useContext(WeatherContext);
@@ -27,13 +28,15 @@ const SignUpForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //   const response = await axios.post("/api/signup", formData);
+      // handle API Authantication
+      // const response = await axios.post("/api/signup", formData);
+
       console.log("User signed up successfully:", formData);
       if (formData) {
         setUserData(formData);
       }
-      navigate('/')
       // Redirect or show success message
+      navigate('/')
     } catch (error) {
       console.error("Sign-up failed:", error.response.data);
     }

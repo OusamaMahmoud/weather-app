@@ -4,9 +4,10 @@ import WeatherContext from "../context/weatherContext";
 const CurrWeather = ({ data }) => {
   const [timestamp, setTimestamp] = useState(0);
   const { convertedTime, setConvertedTime } = useContext(WeatherContext);
+
   useEffect(() => {
     setTimestamp(data.dt);
-
+    
     const unixTimestamp = timestamp * 1000;
     const date = new Date(unixTimestamp);
     let hours = date.getUTCHours();
@@ -14,6 +15,7 @@ const CurrWeather = ({ data }) => {
     hours = hours % 12 || 12;
     const minutes = date.getUTCMinutes().toString().padStart(2, "0");
     const time = `${hours}:${minutes} ${ampm}`;
+
     setConvertedTime(time);
   }, [data]);
 
