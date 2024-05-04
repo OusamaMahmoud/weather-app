@@ -10,11 +10,11 @@ const Footer = () => {
           ownership
         </p>
         <p className="flex items-center gap-3 max-w-[350px] mt-10">
-          <img src="src/assets/icons/email.svg" />
+          <img src="/assets/icons/email.svg" />
           <p className="text-[16px] text-[#000000D9]">SkyCast@mail.com</p>
         </p>
         <p className="flex items-center gap-3 max-w-[350px] mt-5">
-          <img src="src/assets/icons/phone.svg" />
+          <img src="/assets/icons/phone.svg" />
           <p className="text-[16px] text-[#000000D9]">+ 12 3456 7890</p>
         </p>
       </aside>

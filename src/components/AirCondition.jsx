@@ -81,7 +81,7 @@ const AirCondition = ({ data }) => {
         </button>
       </div>
       <div className="flex justify-center items-center text-[17px] font-int font-medium gap-4">
-        <img src="src/assets/icons/clock.svg" /> {convertedTime}
+        <img src="/assets/icons/clock.svg" /> {convertedTime}
       </div>
       {data && data.list && (
         <div className="flex flex-col justify-start items-start p-3">
@@ -90,7 +90,7 @@ const AirCondition = ({ data }) => {
           </h1>
           <div className="flex items-start  gap-3 mt-5 mb-6">
             <span>
-              <img src="src/assets/icons/realFeel.svg" />
+              <img src="/assets/icons/realFeel.svg" />
             </span>
             <div className="">
               <p className="font-int text-[12px] font-medium">Real Feel</p>
@@ -101,7 +101,7 @@ const AirCondition = ({ data }) => {
           </div>
           <div className="flex items-start  gap-3 mt-5  mb-6">
             <span>
-              <img src="src/assets/icons/wind.svg" />
+              <img src="/assets/icons/wind.svg" />
             </span>
             <div className="font-int text-[12px] font-medium">
               <p className="font-int text-[12px] font-medium">Wind</p>
@@ -112,7 +112,7 @@ const AirCondition = ({ data }) => {
           </div>
           <div className="flex items-start  gap-3 mt-5  mb-6">
             <span>
-              <img src="src/assets/icons/rain.svg" />
+              <img src="/assets/icons/rain.svg" />
             </span>
             <div className="font-int text-[12px] font-medium">
               <p className="font-int text-[12px] font-medium">
@@ -126,7 +126,7 @@ const AirCondition = ({ data }) => {
           </div>
           <div className="flex items-start  gap-3 mt-5  mb-6">
             <span>
-              <img src="src/assets/icons/UV.svg" />
+              <img src="/assets/icons/UV.svg" />
             </span>
             <div className="font-int text-[12px] font-medium">
               <p className="font-int text-[12px] font-medium">UV Index </p>

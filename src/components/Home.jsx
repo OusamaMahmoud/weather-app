@@ -78,7 +78,7 @@ const Home = () => {
           )}
           {forcastWeather && (
             <div className="mb-10  lg:mb-0 xl:w-[800px]">
-              <img src="src/assets/icons/forcastHourly.svg" />
+              <img src="/assets/icons/forcastHourly.svg" />
             </div>
           )}
         </div>

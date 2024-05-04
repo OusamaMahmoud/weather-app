@@ -52,7 +52,7 @@ const LoginForm = () => {
             </p>
           </div>
           <div>
-            <img src="src/assets/icons/clouds.svg" />
+            <img src="/assets/icons/clouds.svg" />
           </div>
         </div>
         <div className="w-full lg:min-w-[500px] xl:min-w-[600px] bg-white rounded-s-3xl px-10 py-5 ">
@@ -105,9 +105,9 @@ const LoginForm = () => {
               Or Login with
             </div>
             <div className="flex justify-center items-center gap-8 lg:gap-24">
-              <img src="src/assets/icons/google.svg" />
-              <img src="src/assets/icons/facebook.svg" />
-              <img src="src/assets/icons/nstagram.svg" />
+              <img src="/assets/icons/google.svg" />
+              <img src="/assets/icons/facebook.svg" />
+              <img src="/assets/icons/nstagram.svg" />
             </div>
             <div className="flex justify-center items-center">
               <p className="text-2xl text-[#00000080] mt-10 justify-self-center">

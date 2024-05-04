@@ -10,7 +10,7 @@ const NavBar = ({ data }) => {
     <div className="flex flex-col gap-4 md:flex-row justify-between items-center border-[3px] border-[#FFFFFF] bg-[#FFFFFF66] rounded-lg px-6 py-[18px]">
       <div className="flex items-center gap-4">
         <img
-          src={"src/assets/icons/burger.svg"}
+          src={"/assets/icons/burger.svg"}
           alt="burger-icon"
           className=""
         />
@@ -19,7 +19,7 @@ const NavBar = ({ data }) => {
         </p>
         <div className="flex items-center gap-3 ml-10">
           <img
-            src={"src/assets/icons/location.svg"}
+            src={"/assets/icons/location.svg"}
             alt="burger-icon"
             className=""
           />
@@ -29,7 +29,7 @@ const NavBar = ({ data }) => {
       <div className="flex items-center gap-14">
         <div className=" flex items-center gap-2 bg-transparent shadow-lg">
           <img
-            src={"src/assets/icons/search.svg"}
+            src={"/assets/icons/search.svg"}
             alt="burger-icon"
             className=""
           />
@@ -37,8 +37,8 @@ const NavBar = ({ data }) => {
         </div>
         {userData ? (
           <div className="flex items-center gap-3">
-            <img src="src/assets/icons/notification.svg" />
-            <img src="src/assets/icons/profile.svg" />
+            <img src="/assets/icons/notification.svg" />
+            <img src="/assets/icons/profile.svg" />
             <p className="font-semibold font-int text-[17px] tracking-wider">{userData.fullName}</p>
           </div>
         ) : (
