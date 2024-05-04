@@ -19,7 +19,6 @@ This Weather App is a simple application that provides users with current weathe
 
 ## Usage
 
-=======
 1. Upon opening the app, users are prompted to enter a city name or zip code.
 2. After submitting the location, the app fetches the current weather data from the OpenWeather API.
 3. The retrieved weather information is displayed on the screen.
@@ -30,7 +29,6 @@ This app integrates with the [OpenWeather API](https://openweathermap.org/api) t
 
 ## Limitations
 
-=======
 This app integrates with the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data. Please note that a free API key is required for accessing the weather data. Instructions for obtaining an API key can be found on the OpenWeather website.
 
 ## Limitations
@@ -44,7 +42,6 @@ This app integrates with the [OpenWeather API](https://openweathermap.org/api) t
 
 ## License
 
-=======
 - Weather icons provided by [OpenWeather](https://openweathermap.org/weather-conditions).
 
 ## License
