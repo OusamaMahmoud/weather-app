@@ -32,7 +32,7 @@ const AirCondition = ({ data }) => {
   const todayIndex = new Date().getDay();
 
   return (
-    <div className="rounded-2xl bg-[#FFFFFF66] p-3 pt-10 md:-mt-32 lg:-mt-24 border-[3px] border-white xl:mt-0 md:max-w-[360px] md:ml-5 lg:ml-0  lg:max-w-[500px]">
+    <div className="rounded-2xl bg-[#FFFFFF66] p-3 pt-10  border-[3px] border-white xl:mt-0 md:max-w-[360px] md:ml-5 lg:ml-0  lg:max-w-[500px]">
       <div className="flex justify-between items-center gap-5">
         <button onClick={movePrevious}>
           <MdKeyboardArrowLeft size={35} color="#0FB3BB" />

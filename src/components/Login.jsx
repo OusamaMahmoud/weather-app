@@ -1,15 +1,13 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { TiArrowSortedDown } from "react-icons/ti";
-
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"; // Import eye icons from React Icons
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import WeatherContext from "../context/weatherContext";
-const SignUpForm = () => {
+const LoginForm = () => {
   const { setUserData } = useContext(WeatherContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: "",
     email: "",
     password: "",
   });
@@ -27,15 +25,15 @@ const SignUpForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //   const response = await axios.post("/api/signup", formData);
-      console.log("User signed up successfully:", formData);
+      //   const response = await axios.post("/api/login", formData);
+      console.log("User login successfully:", formData);
       if (formData) {
         setUserData(formData);
       }
       navigate('/')
       // Redirect or show success message
     } catch (error) {
-      console.error("Sign-up failed:", error.response.data);
+      console.error("Login failed:", error.response.data);
     }
   };
 
@@ -62,17 +60,9 @@ const SignUpForm = () => {
             {" "}
             English (U.K) <TiArrowSortedDown />
           </span>
-          <h1 className="text-3xl  lg:text-5xl font-int">Create Account</h1>
+          <h1 className="text-3xl  lg:text-5xl font-int">Login</h1>
           <form onSubmit={handleSubmit}>
-            <div className="mt-20 flex flex-col justify-between items-center gap-4 lg:max-w-[720px]">
-              <input
-                className="bg-[#FCF7E8] p-4 rounded-lg text-2xl w-full"
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-                placeholder="Full Name"
-              />
+            <div className="mt-20 flex flex-col justify-center items-center gap-4 lg:max-w-[720px] min-h-[250px]">
               <input
                 className="bg-[#FCF7E8] p-4 rounded-lg text-2xl w-full"
                 type="email"
@@ -108,11 +98,11 @@ const SignUpForm = () => {
                 type="submit"
                 className="text-[20px] mt-10  whitespace-nowrap rounded-full px-16 py-4 lg:px-32 lg:py-6 bg-[#0FB3BB] lg:text-4xl text-white font-int"
               >
-                Sign Up
+                Login
               </button>
             </div>
             <div className="divider divider-vertical my-20 font-int text-[#00000080] text-[24px]">
-              Or Sign Up with
+              Or Login with
             </div>
             <div className="flex justify-center items-center gap-8 lg:gap-24">
               <img src="src/assets/icons/google.svg" />
@@ -121,9 +111,9 @@ const SignUpForm = () => {
             </div>
             <div className="flex justify-center items-center">
               <p className="text-2xl text-[#00000080] mt-10 justify-self-center">
-                Already have an account ?{" "}
-                <Link to={"/login"} className="text-black">
-                  Log In
+                You don't have an account ?{" "}
+                <Link to={"/signup"} className="text-black">
+                 Sign Up
                 </Link>
               </p>
             </div>
@@ -134,4 +124,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default LoginForm;

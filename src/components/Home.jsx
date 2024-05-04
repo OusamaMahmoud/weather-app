@@ -16,25 +16,24 @@ const Home = () => {
 
   useEffect(() => {
     if (search === null) {
-        const currentWeatherFetch = fetch(
-            `${WEATHER_API_URL}/weather?lat=${30.033333}&lon=${31.233334}&appid=${WEATHER_API_KEY}&units=metric`
-          );
-    
-          const forcasttWeatherFetch = fetch(
-            `${WEATHER_API_URL}/forecast?lat=${30.033333}&lon=${31.233334}&appid=${WEATHER_API_KEY}&units=metric`
-          );
-    
-          Promise.all([currentWeatherFetch, forcasttWeatherFetch])
-            .then(async (response) => {
-              const currentWeatherResponse = await response[0].json();
-              const forcastWeatherResponse = await response[1].json();
-    
-              setCurrentWeather({  ...currentWeatherResponse });
-              setForcastWeather({  ...forcastWeatherResponse });
-            })
-            .catch((err) => console.log(err));
-        
-    }else{
+      const currentWeatherFetch = fetch(
+        `${WEATHER_API_URL}/weather?lat=${30.033333}&lon=${31.233334}&appid=${WEATHER_API_KEY}&units=metric`
+      );
+
+      const forcasttWeatherFetch = fetch(
+        `${WEATHER_API_URL}/forecast?lat=${30.033333}&lon=${31.233334}&appid=${WEATHER_API_KEY}&units=metric`
+      );
+
+      Promise.all([currentWeatherFetch, forcasttWeatherFetch])
+        .then(async (response) => {
+          const currentWeatherResponse = await response[0].json();
+          const forcastWeatherResponse = await response[1].json();
+
+          setCurrentWeather({ ...currentWeatherResponse });
+          setForcastWeather({ ...forcastWeatherResponse });
+        })
+        .catch((err) => console.log(err));
+    } else {
       const [lat, lon] = search.value.split(" ");
 
       const currentWeatherFetch = fetch(
@@ -62,15 +61,15 @@ const Home = () => {
   }, [search]);
   return (
     <div className="container mx-auto p-6 bg-gradient-to-r from-[#CBE0EA] via-[#C2D7E0] to-[#DAE0E2]">
-      <NavBar  data={currentWeather}/>
-      <div className="flex flex-col md:flex-row  justify-between items-center mt-8 min-h-80">
-        <div className="flex flex-wrap justify-start items-start gap-8 ">
+      <NavBar data={currentWeather} />
+      <div className="flex flex-col md:flex-row  justify-between  items-start mt-8">
+        <div className="flex flex-wrap justify-start items-start gap-6 "> 
           {currentWeather && <CurrWeather data={currentWeather} />}
           {forcastWeather && (
-            <div className="lg:min-w-[500px] xl:min-w-[470px] rounded-2xl px-5 py-4 border-[3px] bg-[#FFFFFF66] border-[white] ">
+            <div className="lg:min-w-[500px] xl:min-w-[375px]  rounded-2xl px-5 py-4 border-[3px] bg-[#FFFFFF66] border-[white] ">
               {currentWeather && (
                 <span className="text-[15px] font-int font-medium">
-                  {currentWeather.city || 'Cairo , EG'}
+                  {currentWeather.city || "Cairo , EG"}
                 </span>
               )}
               <div className="divider divider-vertical m-0 mt-[4px] mb-2 "></div>
@@ -78,7 +77,7 @@ const Home = () => {
             </div>
           )}
           {forcastWeather && (
-            <div className="mb-10  lg:mb-0 ">
+            <div className="mb-10  lg:mb-0 xl:w-[800px]">
               <img src="src/assets/icons/forcastHourly.svg" />
             </div>
           )}

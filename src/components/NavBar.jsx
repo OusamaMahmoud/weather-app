@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 import Search from "./Search";
+import { useContext } from "react";
+import WeatherContext from "../context/weatherContext";
 
+const NavBar = ({ data }) => {
+  const { userData } = useContext(WeatherContext);
 
-const NavBar = ({data}) => {
-  
   return (
     <div className="flex flex-col gap-4 md:flex-row justify-between items-center border-[3px] border-[#FFFFFF] bg-[#FFFFFF66] rounded-lg px-6 py-[18px]">
       <div className="flex items-center gap-4">
@@ -20,7 +23,7 @@ const NavBar = ({data}) => {
             alt="burger-icon"
             className=""
           />
-         {data && <p className="font-pop">{data.city || 'Cairo , EG'}</p>}
+          {data && <p className="font-pop">{data.city || "Cairo , EG"}</p>}
         </div>
       </div>
       <div className="flex items-center gap-14">
@@ -32,9 +35,19 @@ const NavBar = ({data}) => {
           />
           <Search />
         </div>
-        <button className="text-[14px] whitespace-nowrap rounded-lg px-6 py-2 lg:px-14 lg:py-4 bg-[#0FB3BBCC] lg:text-lg text-black font-semibold font-int">
-          Sign Up
-        </button>
+        {userData ? (
+          <div className="flex items-center gap-3">
+            <img src="src/assets/icons/notification.svg" />
+            <img src="src/assets/icons/profile.svg" />
+            <p className="font-semibold font-int text-[17px] tracking-wider">{userData.fullName}</p>
+          </div>
+        ) : (
+          <Link to={"/signup"}>
+            <button className="text-[14px] whitespace-nowrap rounded-lg px-6 py-2 lg:px-14 lg:py-4 bg-[#0FB3BBCC] lg:text-lg text-black font-semibold font-int">
+              Sign Up
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

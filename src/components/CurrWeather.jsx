@@ -18,7 +18,7 @@ const CurrWeather = ({ data }) => {
   }, [data]);
 
   return (
-    <div className="lg:min-w-[500px] xl:min-w-[500px] rounded-2xl flex flex-col gap-6 justify-between border-[3px] border-[#ffffffff] bg-[#FFFFFF66] px-8 py-5">
+    <div className="lg:min-w-[500px] xl:min-w-[395px] xl: rounded-2xl flex flex-col gap-6 justify-between border-[3px] border-[#ffffffff] bg-[#FFFFFF66] px-8 py-5">
       <div className="flex flex-col gap-1">
         <span className="text-xs text-[#00000099] font-int">
           Current Weather
@@ -39,7 +39,7 @@ const CurrWeather = ({ data }) => {
           {data.weather[0].main}
         </span>
       </div>
-      <p className="text-[15px] font-light font-pop mt-3">
+      <p className="text-[15px] font-light font-pop mt-3 xl:max-w-[325px]">
         There will be {data.weather[0].description}. The high will be{" "}
         <span className="font-normal">{data.main.temp_max}</span>
       </p>

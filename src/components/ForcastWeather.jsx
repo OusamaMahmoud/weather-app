@@ -24,7 +24,7 @@ const ForcastWeather = ({ data }) => {
   };
 
   return (
-    <div className="flex justify-between items-center gap-2 ">
+    <div className="flex justify-between items-center gap-4 ">
       <button onClick={movePrevious}><IoMdArrowDropleft className="text-2xl" /></button>
       {data &&
         data.list &&
