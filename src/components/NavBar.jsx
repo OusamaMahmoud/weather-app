@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
 import Search from "./Search";
-import WeatherContext from "../context/weatherContext";
-import { WEATHER_API_KEY, WEATHER_API_URL } from "../api";
 
-const NavBar = () => {
+
+const NavBar = ({data}) => {
   
   return (
-    <div className="flex justify-between items-center border-[3px] border-[#FFFFFF] bg-[#FFFFFF66] rounded-lg px-6 py-[18px]">
+    <div className="flex flex-col gap-4 md:flex-row justify-between items-center border-[3px] border-[#FFFFFF] bg-[#FFFFFF66] rounded-lg px-6 py-[18px]">
       <div className="flex items-center gap-4">
         <img
           src={"src/assets/icons/burger.svg"}
@@ -22,7 +20,7 @@ const NavBar = () => {
             alt="burger-icon"
             className=""
           />
-          <p className="font-pop">Egypt, Cairo</p>
+         {data && <p className="font-pop">{data.city || 'Cairo , EG'}</p>}
         </div>
       </div>
       <div className="flex items-center gap-14">
@@ -34,7 +32,7 @@ const NavBar = () => {
           />
           <Search />
         </div>
-        <button className="rounded-lg px-14 py-4 bg-[#0FB3BBCC] text-lg text-black font-semibold font-int">
+        <button className="text-[14px] whitespace-nowrap rounded-lg px-6 py-2 lg:px-14 lg:py-4 bg-[#0FB3BBCC] lg:text-lg text-black font-semibold font-int">
           Sign Up
         </button>
       </div>

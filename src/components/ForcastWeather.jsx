@@ -24,8 +24,8 @@ const ForcastWeather = ({ data }) => {
   };
 
   return (
-    <div className="flex justify-between items-center gap-6">
-      <button onClick={movePrevious}><IoMdArrowDropleft /></button>
+    <div className="flex justify-between items-center gap-2 ">
+      <button onClick={movePrevious}><IoMdArrowDropleft className="text-2xl" /></button>
       {data &&
         data.list &&
         data.list.slice(startIndex, startIndex + 4).map((item, idx) => {
@@ -41,18 +41,18 @@ const ForcastWeather = ({ data }) => {
           const formattedDate = `${month} ${dayOfMonth}`;
 
           return (
-            <div key={idx}>
-              <div className="flex flex-col gap-1 justify-center items-center">
-                <span className="text-[12px] font-int font-medium">
-                  {idx === 0 && "Today"} ({dayInAWeek})
+            <div key={idx} >
+              <div className="flex flex-col justify-center items-center ">
+                <span className="whitespace-nowrap text-[12px] font-int font-medium">
+                 {dayInAWeek}
                 </span>
                 <span className="text-[12px] text-[#0000007A] font-pop font-normal ">
                   {formattedDate}
                 </span>
               </div>
-              <div className="flex flex-col gap-1 justify-center items-center">
+              <div className="flex flex-col justify-center items-center">
                 <img
-                  src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                  src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`}
                   alt="Weather Icon"
                 />
 
@@ -60,10 +60,9 @@ const ForcastWeather = ({ data }) => {
                   {item.weather[0].main}
                 </span>
               </div>
-              <div className="flex flex-col gap-1 mt-3  justify-center items-center">
-                <span className="text-[12px] text-[#0000007A] font-pop font-normal ">
-                  {Math.floor(item.main.temp_min)}-
-                  {Math.ceil(item.main.temp_max)}℃
+              <div className="flex flex-col  mt-3  justify-center items-center">
+                <span className="whitespace-nowrap text-[12px] text-[#0000007A] font-pop font-normal ">
+                  {Math.floor(item.main.temp_min)}-{Math.ceil(item.main.temp_max)}℃
                 </span>
                 <span className=" text-[12px] text-[#0000007A] font-pop font-normal ">
                   AQI {item.main.humidity}
@@ -72,7 +71,7 @@ const ForcastWeather = ({ data }) => {
             </div>
           );
         })}
-      <button onClick={moveNext}><IoMdArrowDropright /></button>
+      <button onClick={moveNext}><IoMdArrowDropright className="text-2xl" /></button>
     </div>
   );
 };
