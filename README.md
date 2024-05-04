@@ -30,9 +30,6 @@ This app integrates with the [OpenWeather API](https://openweathermap.org/api) t
 ## Limitations
 
 This app integrates with the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data. Please note that a free API key is required for accessing the weather data. Instructions for obtaining an API key can be found on the OpenWeather website.
-
-## Limitations
-
 - Due to API constraints, the 24-hour forecast feature is not available in this version of the app. Instead, a static image placeholder is utilized.
 - The app's functionality may be affected if the OpenWeather API service is unavailable or the API key is invalid.
 
@@ -43,7 +40,4 @@ This app integrates with the [OpenWeather API](https://openweathermap.org/api) t
 ## License
 
 - Weather icons provided by [OpenWeather](https://openweathermap.org/weather-conditions).
-
-## License
-
 This project is licensed under the [MIT License](LICENSE).
